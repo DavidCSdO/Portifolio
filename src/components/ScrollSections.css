@@ -1,62 +1,121 @@
 body {
-
   margin: 0;
-
   background: #fff;
   color: #000;
-
   overflow-x: hidden;
-
-  transition:
-    background-color 0.5s ease,
-    color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .colorSection {
-
   min-height: 100vh;
-
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   align-items: center;
-
   gap: 4rem;
-
   padding: 0 10vw;
 }
 
 .colorSection h2 {
-
   font-size: 4rem;
-
   line-height: 1;
 }
 
 .colorSection img {
-
   width: 100%;
-
   height: 70vh;
-
   object-fit: cover;
-
   border-radius: 20px;
 }
 
-@media (max-width: 768px) {
+/* Eyebrow label */
+.eyebrow {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
 
+/* Decorative line */
+.section-line {
+  width: 48px;
+  height: 2px;
+  background: currentColor;
+  margin-bottom: 20px;
+  transform-origin: left center;
+}
+
+/* ─── RESPONSIVE ─── */
+
+/* TABLET */
+@media (max-width: 1024px) {
   .colorSection {
-
-    grid-template-columns: 1fr;
-
-    padding: 4rem 2rem;
+    gap: 3rem;
+    padding: 0 6vw;
   }
 
   .colorSection h2 {
-
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
+  .colorSection img {
+    height: 55vh;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .colorSection {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 5rem 6vw 4rem;
+    gap: 2rem;
+  }
+
+  /* Imagem sempre abaixo do texto no mobile */
+  .section-text {
+    order: 1;
+  }
+
+  .section-image {
+    order: 2;
+  }
+
+  .colorSection h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .colorSection img {
+    height: 50vw;
+    min-height: 220px;
+    border-radius: 16px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .section-line {
+    margin-bottom: 16px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 400px) {
+  .colorSection {
+    padding: 4rem 5vw 3rem;
+  }
+
+  .colorSection h2 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+
+  .colorSection img {
+    height: 56vw;
+    border-radius: 14px;
+  }
 }

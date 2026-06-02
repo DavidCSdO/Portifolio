@@ -1,532 +1,430 @@
-
 /* RESET */
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* HERO */
-.hero{
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 135vh;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 4rem;
-
-    padding: 0 80px;
-
-    overflow: visible;
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 135vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0 80px;
+  overflow: visible;
 }
 
 /* BACKGROUND */
-
-.hero::before{
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-    linear-gradient(
-      315deg,
-      rgba(101,0,94,1) 3%,
-      rgba(60,132,206,1) 38%,
-      rgba(48,238,226,1) 68%,
-      rgba(255,25,25,1) 98%
-    );
-
-    background-size: 400% 400%;
-
-    animation: gradient 15s ease infinite;
-
-    z-index: -3;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    315deg,
+    rgba(101, 0, 94, 1) 3%,
+    rgba(60, 132, 206, 1) 38%,
+    rgba(48, 238, 226, 1) 68%,
+    rgba(255, 25, 25, 1) 98%
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  z-index: -3;
 }
 
-.heroContent{
-
-    position: relative;
-
-    z-index: 5;
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 4rem;
+.heroContent {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
 }
 
-.floatingCards{
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 18px;
-
-    transform: translateX(-50%);
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 320px);
-
-    gap: 28px;
-
-    z-index: 6;
+.floatingCards {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  gap: 28px;
+  z-index: 6;
 }
 
-.waveCard{
-
-    position: relative;
-
-    width: 320px;
-    height: 240px;
-
-    padding: 28px;
-
-    border-radius: 32px;
-
-    overflow: hidden;
-
-    display: flex;
-
-    flex-direction: column;
-    justify-content: flex-start;
-
-    color: white;
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(255,255,255,0.16),
-        rgba(255,255,255,0.04)
-      );
-
-    border:
-      1px solid rgba(255,255,255,0.18);
-
-    backdrop-filter:
-      blur(22px)
-      saturate(180%);
-
-    -webkit-backdrop-filter:
-      blur(22px)
-      saturate(180%);
-
-    box-shadow:
-      0 10px 40px rgba(0,0,0,0.18),
-      inset 0 1px 1px rgba(255,255,255,0.18);
-
-    transition:
-      transform .45s cubic-bezier(.22,1,.36,1),
-      background .45s ease,
-      border .45s ease;
+.waveCard {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  padding: 28px;
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s ease, border 0.45s ease;
 }
 
 .waveCard:hover {
-    transform: translateY(-12px) scale(1.02);
-    border: 1px solid rgba(255,255,255,0.28);
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.22),
-        rgba(255,255,255,0.06)
-    );
+  transform: translateY(-12px) scale(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.06)
+  );
 }
 
-.waveCard h3{
-
-    margin-bottom: 12px;
-
-    font-size: 1.2rem;
+.waveCard h3 {
+  font-size: 1.45rem;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
-.waveCard p{
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color: rgba(255,255,255,0.82);
+.waveCard p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
 }
 
-.waveCard::before{
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255,255,255,0.30) 0%,
-        rgba(255,255,255,0.08) 22%,
-        transparent 45%
-      );
-
-    pointer-events: none;
+.waveCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.08) 22%,
+    transparent 45%
+  );
+  pointer-events: none;
 }
 
-.waveCard::after{
-
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    top: -120px;
-    right: -120px;
-
-    background:
-      radial-gradient(
-        circle,
-        rgba(255,255,255,0.22),
-        transparent 70%
-      );
-
-    pointer-events: none;
-}
-.waveSection{
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-
-    height: 320px;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-    mask-image: linear-gradient(
-      to top,
-      rgba(0,0,0,1),
-      rgba(0,0,0,0)
-    );
+.waveCard::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: -120px;
+  right: -120px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.22),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
-.wave{
-
-    position: absolute;
-
-    left: -50%;
-
-    bottom: 35px;
-
-    width: 200%;
-
-    height: 760px;
-
-    border-radius: 44%;
-
-    background:
-      rgba(255,255,255,0.10);
-
-    backdrop-filter: blur(18px);
-
-    animation: wave 22s linear infinite;
+.waveSection {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-.wave:nth-child(2){
-
-    bottom: -320px;
-
-    opacity: 0.45;
-
-    animation-duration: 30s;
-
-    animation-direction: reverse;
+.wave {
+  position: absolute;
+  left: -50%;
+  bottom: 35px;
+  width: 200%;
+  height: 760px;
+  border-radius: 44%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  animation: wave 22s linear infinite;
 }
 
-.wave:nth-child(3){
-
-    bottom: -420px;
-
-    opacity: 0.22;
-
-    animation-duration: 40s;
-
-    animation-direction: reverse;
-}
-.waveCard:hover{
-
-    transform:
-      translateY(-12px)
-      scale(1.02);
-
-    border:
-      1px solid rgba(255,255,255,0.28);
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(255,255,255,0.22),
-        rgba(255,255,255,0.06)
-      );
+.wave:nth-child(2) {
+  bottom: -320px;
+  opacity: 0.45;
+  animation-duration: 30s;
+  animation-direction: reverse;
 }
 
-.waveCard h3{
-
-    font-size: 1.45rem;
-
-    line-height: 1.2;
-
-    margin-bottom: 18px;
-
-    font-weight: 600;
-
-    letter-spacing: -0.5px;
+.wave:nth-child(3) {
+  bottom: -420px;
+  opacity: 0.22;
+  animation-duration: 40s;
+  animation-direction: reverse;
 }
 
-.waveCard p{
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-    color:
-      rgba(255,255,255,0.82);
-}
-.fullName{
-
-    flex: 1;
-
-    display: flex;
-    align-items: center;
-    margin-top: 0%;
+/* LEFT */
+.fullName {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 0%;
 }
 
-.fullName h1{
-
-    color: white;
-
-    font-family: 'FH Lecturis', serif;
-
-    font-size: clamp(6rem, 11vw, 11rem);
-
-    line-height: 0.82;
-
-    letter-spacing: -5px;
-
-    text-shadow: 0 10px 40px rgba(0,0,0,0.25);
+.fullName h1 {
+  color: white;
+  font-family: 'FH Lecturis', serif;
+  font-size: clamp(6rem, 11vw, 11rem);
+  line-height: 0.82;
+  letter-spacing: -5px;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* RIGHT */
-
-.infoBox{
-
-    width: 100%;
-    max-width: 560px;
-    margin-top: -3%;
-
-    flex-shrink: 0;
-
-    padding: 40px;
-
-    border-radius: 24px;
-
-    color: white;
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    backdrop-filter: blur(12px);
-
-    background: rgba(255,255,255,0.05);
-
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+.infoBox {
+  width: 100%;
+  max-width: 560px;
+  margin-top: -3%;
+  flex-shrink: 0;
+  padding: 40px;
+  border-radius: 24px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.tag{
-
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    padding: 8px 18px;
-
-    border-radius: 999px;
-
-    background: rgba(255,255,255,0.08);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
+.tag {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.infoBox h2{
-
-    font-size: clamp(2rem, 4vw, 3.5rem);
-
-    margin-bottom: 20px;
-
-    font-family: 'Times New Roman', serif;
+.infoBox h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', serif;
 }
 
-.infoBox p{
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-    color: rgba(255,255,255,0.85);
-
-    margin-bottom: 20px;
+.infoBox p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
 }
 
 /* BUTTONS */
-
-.buttons{
-
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.primaryBtn{
-
-    padding: 14px 28px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    font-weight: 600;
-
-    transition: .3s;
+.primaryBtn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.primaryBtn:hover{
-    transform: translateY(-3px);
+.primaryBtn:hover {
+  transform: translateY(-3px);
 }
 
-.secondaryBtn{
-
-    padding: 14px 28px;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    background: transparent;
-
-    color: white;
-
-    cursor: pointer;
-
-    transition: .3s;
+.secondaryBtn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.secondaryBtn:hover{
-    background: rgba(255,255,255,0.08);
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ROTATING TEXT */
-
 .rotatingText {
-
   display: inline-block;
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .visible {
-
   opacity: 1;
-
   transform: translateY(0);
 }
 
 .hidden {
-
   opacity: 0;
-
   transform: translateY(8px);
 }
 
 /* ANIMATIONS */
-
 @keyframes gradient {
-
-    0% {
-        background-position: 0% 0%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    100% {
-        background-position: 0% 0%;
-    }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 @keyframes wave {
-
-    0%{
-        transform: translateX(0);
-    }
-
-    50%{
-        transform: translateX(-25%);
-    }
-
-    100%{
-        transform: translateX(0);
-    }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
 }
 
-/* RESPONSIVE */
+/* ─── RESPONSIVE ─── */
 
-@media(max-width: 1100px){
+/* TABLET */
+@media (max-width: 1100px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    padding: 6rem 2rem 4rem;
+    min-height: auto;
+  }
 
-    .hero{
+  .heroContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
 
-        flex-direction: column;
+  .fullName {
+    justify-content: center;
+  }
 
-        justify-content: center;
+  .fullName h1 {
+    text-align: center;
+    letter-spacing: -3px;
+  }
 
-        gap: 4rem;
+  .infoBox {
+    max-width: 100%;
+    margin-top: 0;
+  }
 
-        padding: 4rem 2rem;
-    }
+  .floatingCards {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+  }
 
-    .fullName h1{
+  .waveCard {
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+  }
+}
 
-        text-align: center;
-    }
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1.25rem 3rem;
+    gap: 2rem;
+  }
 
-    .infoBox{
+  .fullName h1 {
+    font-size: clamp(4rem, 18vw, 6rem);
+    letter-spacing: -2px;
+    text-align: center;
+  }
 
-        max-width: 100%;
-    }
+  .infoBox {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .infoBox h2 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    margin-bottom: 14px;
+  }
+
+  .infoBox p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-bottom: 14px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .floatingCards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 2rem;
+  }
+
+  .waveCard {
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    padding: 22px 20px;
+    border-radius: 22px;
+  }
+
+  .waveCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .waveCard p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .waveSection {
+    height: 180px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 400px) {
+  .hero {
+    padding: 4.5rem 1rem 2.5rem;
+  }
+
+  .fullName h1 {
+    font-size: clamp(3.2rem, 20vw, 4.5rem);
+    letter-spacing: -1px;
+  }
 }
