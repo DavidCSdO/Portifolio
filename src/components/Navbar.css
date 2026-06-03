@@ -31,7 +31,7 @@
 /* NAVBAR */
 .navbar {
   position: relative;
-  overflow: visible; /* era hidden — cortava o glow dos links */
+  overflow: hidden;
   padding: 0 28px;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@
     inset 0 1px 1px rgba(255, 255, 255, 0.12);
 }
 
-/* LIQUID GLASS — clip visual interno sem overflow: hidden no pai */
+/* LIQUID GLASS */
 .navbar::before {
   content: "";
   position: absolute;
@@ -83,7 +83,6 @@
   );
   opacity: 0.9;
   pointer-events: none;
-  overflow: hidden;
 }
 
 /* FLOATING LIGHT */
@@ -154,7 +153,6 @@
 .navbar-link {
   position: relative;
   z-index: 2;
-  isolation: isolate; /* cria contexto de empilhamento próprio */
   font-family: 'FH Lecturis', serif;
   font-size: 13px;
   font-weight: 700;
@@ -175,7 +173,7 @@
   transform: translateY(-1px);
 }
 
-/* ABERRAÇÃO CROMÁTICA — corrigida */
+/* LINK GLOW */
 .navbar-link::after {
   content: "";
   position: absolute;
@@ -193,8 +191,6 @@
   border-radius: 100vmax;
   filter: blur(12px);
   opacity: 0;
-  pointer-events: none;
-  mix-blend-mode: screen; /* bypass do z-index enterrado pelo glassmorphism */
   transition: opacity 0.4s ease;
 }
 
@@ -326,6 +322,7 @@
     width: calc(100% - 24px);
   }
 
+  /* No mobile, o grid sempre fica visível e os links sempre escondidos */
   .navbar {
     height: 56px;
     padding: 0 16px;
@@ -341,6 +338,7 @@
     transform: scale(1);
   }
 
+  /* Dropdown centralizado e mais largo no mobile */
   .dropdown-menu {
     width: calc(100vw - 48px);
     left: 50%;

@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import BG from "./assets/BG2.png";
+import BG from "./assets/BG.png";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
